@@ -28,10 +28,29 @@ class _HomePageState extends State<HomePage> {
             ),
             new Padding(padding: const EdgeInsets.only(top: 20.0)),
             new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new RaisedButton(child: new Text("+"), onPressed: () {}),
-                new RaisedButton(child: new Text("-"), onPressed: () {})
+                new MaterialButton(
+                    child: new Text("+"),
+                    color: Colors.redAccent,
+                    onPressed: () {}),
+                new MaterialButton(
+                    child: new Text("-"),
+                    color: Colors.redAccent,
+                    onPressed: () {})
+              ],
+            ),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                new MaterialButton(
+                    child: new Text("*"),
+                    color: Colors.redAccent,
+                    onPressed: () {}),
+                new MaterialButton(
+                    child: new Text("/"),
+                    color: Colors.redAccent,
+                    onPressed: () {})
               ],
             )
           ],
