@@ -79,9 +79,8 @@ class _HomePageState extends State<HomePage> {
                 new MaterialButton(
                     child: new Text("+"),
                     color: Colors.redAccent,
-                    onPressed: () {
-                      doAddition();
-                    }),
+                    onPressed: doAddition
+                ),
                 new MaterialButton(
                     child: new Text("-"),
                     color: Colors.redAccent,
