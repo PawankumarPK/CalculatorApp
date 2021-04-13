@@ -12,38 +12,6 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController t1 = new TextEditingController(text: "0");
   final TextEditingController t2 = new TextEditingController(text: "0");
 
-  void doAddition() {
-    setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
-      sum = num1 + num2;
-    });
-  }
-
-  void doSubtraction() {
-    setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
-      sum = num1 - num2;
-    });
-  }
-
-  void doMultiplication() {
-    setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
-      sum = num1 * num2;
-    });
-  }
-
-  void doDivision() {
-    setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
-      sum = num1 ~/ num2;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -79,8 +47,7 @@ class _HomePageState extends State<HomePage> {
                 new MaterialButton(
                     child: new Text("+"),
                     color: Colors.redAccent,
-                    onPressed: doAddition
-                ),
+                    onPressed: doAddition),
                 new MaterialButton(
                     child: new Text("-"),
                     color: Colors.redAccent,
@@ -105,10 +72,58 @@ class _HomePageState extends State<HomePage> {
                       doDivision();
                     })
               ],
+            ),
+            new Padding(padding: const EdgeInsets.only(top: 20.0)),
+            new Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                new MaterialButton(
+                  child: new Text("Clear"),
+                  color: Colors.redAccent,
+                  onPressed: doClear,
+                )
+              ],
             )
           ],
         ),
       ),
     );
+  }
+
+  void doAddition() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 + num2;
+    });
+  }
+
+  void doSubtraction() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 - num2;
+    });
+  }
+
+  void doMultiplication() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 * num2;
+    });
+  }
+
+  void doDivision() {
+    setState(() {
+      num1 = int.parse(t1.text);
+      num2 = int.parse(t2.text);
+      sum = num1 ~/ num2;
+    });
+  }
+
+  void doClear() {
+    t1.text = "0";
+    t2.text = "0";
   }
 }
